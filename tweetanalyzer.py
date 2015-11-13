@@ -15,10 +15,10 @@ from tweepy import Stream
 import sys
 
 #Get Twitter API keys from Twitter developer account
-access_token = "19559894-tvL69XC7oR4Y3BxwK35W652C0FLPhit3oO6rIVD0V"
-access_token_secret = "mUYU6tLGgiUaIqj5Mt69RqoWgkmAmXv7sDPU853OCWCs4"
-consumer_key = "P1Yn4XDNnTh0Ocgz1M9RbQRVj"
-consumer_secret = "9amzFy5mU5gsDlXxQCkMbTn8T0hwJ8SIbn5QMR3BcONONifYsd"
+access_token = ""
+access_token_secret = ""
+consumer_key = ""
+consumer_secret = ""
 
 TERMS={}
 
