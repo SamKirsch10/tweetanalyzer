@@ -8,7 +8,7 @@ TweetAnalyzer.py will stream positive tweets on a keyword or handle. It uses a s
 
 ## Usage
 $ python tweetanalyzer.py keyword
-No need to use an @ for a handle
+* No need to use an @ for a handle
 
 ### Example
-python tweetanalyzer.py Apple
+$ python tweetanalyzer.py Apple
