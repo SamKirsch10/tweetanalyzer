@@ -5,6 +5,7 @@ TweetAnalyzer.py will stream positive tweets on a keyword or handle. It uses a s
 ## Requirements
 * Python
 * Tweepy (to install, use pip install tweepy)
+* AFINN-111.txt needs to be in the same folder level
 
 ## Usage
 $ python tweetanalyzer.py keyword
