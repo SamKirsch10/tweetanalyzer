@@ -49,7 +49,7 @@ def check_mentions(data):
         for item in mentions:
             if (item['screen_name'] == sys.argv[1]):
                 return True 
-        return False
+    return False
 
 class StdOutListener(StreamListener):
 
