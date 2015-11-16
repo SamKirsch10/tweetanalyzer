@@ -1,6 +1,6 @@
 # TweetAnalyzer
 
-TweetAnalyzer.py will stream positive tweets on a keyword or handle. It uses a sentiment dictonary to analyze a tweet's text. The tweet is given a sentiment value, and only outputted if above 1 (for a positive tweet).
+TweetAnalyzer.py will stream positive tweets that mention a handle. It uses a sentiment dictonary to analyze a tweet's text. The tweet is given a sentiment value, and only outputted if above 1 (for a positive tweet).
 
 ## Requirements
 * Python
@@ -8,8 +8,8 @@ TweetAnalyzer.py will stream positive tweets on a keyword or handle. It uses a s
 * AFINN-111.txt needs to be in the same folder level
 
 ## Usage
-$ python tweetanalyzer.py keyword
+$ python tweetanalyzer.py handle
 * No need to use an @ for a handle
 
 ### Example
-$ python tweetanalyzer.py Apple
+$ python tweetanalyzer.py Microsoft

@@ -1,5 +1,5 @@
-# TweetAnalyzer.py will stream positive tweets on a keyword or handle
-# Usage: in a commandline: python tweetanalyzer.py keyword
+# TweetAnalyzer.py will stream positive tweets on a handle
+# Usage: in a commandline: python tweetanalyzer.py twitterhandle
 # No need to use an @ for a handle
 #
 #
@@ -43,6 +43,14 @@ def analyzeData(data):
             sentiment = sentiment+ float(TERMS[word])
     return sentiment
 
+def check_mentions(data):
+    if ('user_mentions' in data['entities']):
+        mentions = data['entities']['user_mentions']
+        for item in mentions:
+            if (item['screen_name'] == sys.argv[1]):
+                return True 
+        return False
+
 class StdOutListener(StreamListener):
 
     def on_data(self, data):
@@ -50,10 +58,13 @@ class StdOutListener(StreamListener):
         user = data_json['user']['screen_name']
         tweet_text = data_json['text']
         tweet_id = data_json['id_str']
-        sentiment = analyzeData(tweet_text)
-        if sentiment > 1.0:
-            print ('Twitter Handle ' + user + ' said: ' + tweet_text + 
-                '   link: ' + 'http://twitter.com/' + user + '/status/' + tweet_id)
+        if check_mentions(data_json):
+            sentiment = analyzeData(tweet_text)
+            if sentiment > 0.0:
+                print ('Twitter Handle ' + user + ' said: ' + tweet_text + 
+                    '   link: ' + 'http://twitter.com/' + user + '/status/' + tweet_id)
+        else:
+            print "no mention found (skip)"
         return True
 
     def on_error(self, status):
